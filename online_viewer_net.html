@@ -1,0 +1,87 @@
+<html>
+    <body>
+        <div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h1>Can I take u out on a brunch...or a dinner(as a friend)</h1>
+            <img id="valentineImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw1GhLsNblpbH_OmEF1Et-BFMap_0ly-CexA&s" alt="Valentine's Day Image" style="max-width: 300px; height: auto;">
+            <br/>
+            <br/>
+            <br/>
+            <button id="yesButton">Yes</button>
+            <button id="no">No</button>
+        </div>
+
+        <style>
+            body {
+                background: linear-gradient(to bottom, #f5cac3, #f7ede2);
+            }
+            div {
+                text-align: center;
+                vertical-align: middle;
+            }
+            h1 {
+                color: #ff477e;
+            }
+            #yesButton {
+                background-color: #06d6a0;
+                transition: transform 0.3s;
+                margin-right: 10px;
+                width: 120px;
+                font-size: 30px;
+                height: 40px;
+                color: #fff;
+                margin-left: -140px;
+            }
+            #no {
+                position: absolute;
+                background-color: #ef476f;
+                transition: transform 0.3s;
+                margin-left: 10px;
+                width: 120px;
+                /* font-size: 30px; */
+                height: 40px;
+                color: #fff;
+            }
+        </style>
+        <script>
+            document.getElementById("yesButton").addEventListener("click", showAlert);
+
+            function showAlert() {
+                alert("kimi lng bhiE Heheheheh xDD");
+            }
+
+            var yesButton = document.getElementById("yesButton");
+            var no = document.getElementById("no");
+            var valentineImage = document.getElementById("valentineImage");
+
+            var noTexts = ["sige na pls", "anno na","ang tigas mo naman", "huhuhuhu"];
+            var imageSources = ["https://pbs.twimg.com/media/Fyk7XMnaEAI3PsB.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1RlGFTIr60hx8IpO0f27joVlllQjdvA3h1g&s", "https://i.pinimg.com/736x/66/0a/20/660a20ca5c24c20ffdc3293f3e85f40f.jpg","https://i.pinimg.com/736x/3e/7b/e7/3e7be717b7393c01863e419eaa639450.jpg"];
+
+            no.addEventListener("click", change);
+
+            function change() {
+                var randomIndex = Math.floor(Math.random() * noTexts.length);
+                var randomText = noTexts[randomIndex];
+                no.innerText = randomText;
+
+                var i = Math.floor(Math.random() * 1000) + 1;
+                var j = Math.floor(Math.random() * 700) + 1;
+                no.style.left = i + "px";
+                no.style.top = j + "px";
+
+                var currentWidth = yesButton.offsetWidth;
+                var currentHeight = yesButton.offsetHeight
+                yesButton.style.width = currentWidth + 30 + "px";
+                yesButton.style.height = currentHeight + 10 + "px";
+
+                var randomImageIndex = Math.floor(Math.random() * imageSources.length);
+                valentineImage.src = imageSources[randomImageIndex];
+            }
+        </script>
+    </body>
+</html>
